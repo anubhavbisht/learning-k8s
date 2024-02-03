@@ -1,0 +1,10 @@
+1. kubectl get all
+2. kubectl describe pod podname
+3. kubectl get pod podname -o yaml > test.txt
+4. kubectl port-forward svc/fleetman-webapp 30080:80
+5. kubectl get po --show-labels
+6. kubectl port-forward svc/fleetman-queue 30010:8161
+7. jubectl delete pods --all
+8. kubectl rollout history deployment web-deployment
+9. kubectl rollout status deployment web-deployment
+10. kubectl rollout undo deployment web-deployment

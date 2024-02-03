@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "Hello-World-Service"
+spec:
+  containers:
+    - name: "test"
+      image: ubuntu:trusty
+      command: ["echo"]
+      args: ["hello world"]
