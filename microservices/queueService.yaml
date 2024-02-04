@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: queue-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: queue-pod
+  template:
+    metadata:
+      labels:
+        app: queue-pod
+    spec:
+      containers:
+        - image: richardchesterwood/k8s-fleetman-queue:release1
+          name: queue-container
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: fleetman-queue
+spec: 
+  selector:
+    app: queue-pod
+  type: NodePort
+  ports:
+  - name:  http
+    port:  8161
+    nodePort: 30010
+  - name: endpoint
+    port: 61616

@@ -8,3 +8,4 @@
 8. kubectl rollout history deployment web-deployment
 9. kubectl rollout status deployment web-deployment
 10. kubectl rollout undo deployment web-deployment
+11. kubectl delete -f .

@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webapp-dep
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: webapp-pod
+  template:
+    metadata:
+      labels:
+        app: webapp-pod
+    spec:
+      containers:
+        - image: richardchesterwood/k8s-fleetman-webapp-angular:release1
+          name: webapp-container
+          env:
+            - name: SPRING_PROFILES_ACTIVE
+              value: production-microservice
+---
+apiVersion: v1
+kind: Service
+metadata: 
+  name: fleetman-webapp
+spec: 
+  selector:
+    app: webapp-pod
+  type: NodePort
+  ports:
+  - name:  http
+    port:  80
+    nodePort: 30080
