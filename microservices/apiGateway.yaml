@@ -13,7 +13,7 @@ spec:
         app: apigateway-pod
     spec:
       containers:
-        - image: richardchesterwood/k8s-fleetman-api-gateway:release1
+        - image: richardchesterwood/k8s-fleetman-api-gateway:release2
           name: apigateway-container
           env:
             - name: SPRING_PROFILES_ACTIVE

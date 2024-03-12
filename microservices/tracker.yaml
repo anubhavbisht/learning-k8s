@@ -13,7 +13,7 @@ spec:
         app: tracker-pod
     spec:
       containers:
-        - image: richardchesterwood/k8s-fleetman-position-tracker:release1
+        - image: richardchesterwood/k8s-fleetman-position-tracker:release3
           name: tracker-container
           env:
             - name: SPRING_PROFILES_ACTIVE

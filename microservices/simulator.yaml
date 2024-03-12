@@ -13,7 +13,7 @@ spec:
         app: simulator-pod
     spec:
       containers:
-        - image: richardchesterwood/k8s-fleetman-position-simulator:release1
+        - image: richardchesterwood/k8s-fleetman-position-simulator:release2
           name: simulator-container
           env:
             - name: SPRING_PROFILES_ACTIVE
